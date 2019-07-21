@@ -13,7 +13,7 @@ _pr_user() {
   
   if [[ "$EUID" == 0 ]]; then
     if [[ "$CLICOLOR" = 1 ]]; then
-      ISROOT="%{$fg_bold[red]%}root%{$reset_color%} "
+      ISROOT="%{$c[red]$c_bold%}root%{$c_reset%} "
     else
       ISROOT="root "
     fi
@@ -21,15 +21,15 @@ _pr_user() {
   
   if [[ $CLICOLOR = 1 ]]; then
     
-    if [ $RETVAL -eq 0 ]; then
-      RETSYMBOL+="%{$fg_bold[yellow]%}"
+    if [[ $RETVAL == 0 ]]; then
+      RETSYMBOL+="%{$c[yellow]$c_bold%}"
     else
-      RETSYMBOL+="%{$fg_bold[red]%}"
+      RETSYMBOL+="%{$c[red]$c_bold%}"
     fi
     
   else
     
-    if [ "$RETVAL" == 0 ]; then
+    if [[ "$RETVAL" == 0 ]]; then
       RETSYMBOL+='+'
     else
       RETSYMBOL+="-"
@@ -44,7 +44,7 @@ _pr_user() {
   fi
   
   if [[ $CLICOLOR = 1 ]]; then
-    USERSYMBOL+="%{$reset_color%}"
+    USERSYMBOL+="%{$c_reset%}"
   fi
   
   pr_user="$PR_PROMPT_PREFIX$ISROOT$RETSYMBOL$USERSYMBOL$PR_PROMPT_SUFIX"
