@@ -22,9 +22,9 @@ _pr_user() {
   if [[ $CLICOLOR = 1 ]]; then
     
     if [[ $RETVAL == 0 ]]; then
-      RETSYMBOL+="%{$c[yellow]$c_bold%}"
+      RETSYMBOL="%{$c[yellow]$c_bold%}"
     else
-      RETSYMBOL+="%{$c[red]$c_bold%}"
+      RETSYMBOL="%{$c[red]$c_bold%}"
     fi
     
   else
@@ -38,9 +38,9 @@ _pr_user() {
   fi
   
   if [[ "$EUID" == 0 ]]; then
-    USERSYMBOL+='#'
+    USERSYMBOL='#'
   else
-    USERSYMBOL+='$'
+    USERSYMBOL='$'
   fi
   
   if [[ $CLICOLOR = 1 ]]; then
