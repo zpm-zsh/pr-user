@@ -30,9 +30,9 @@ _pr_user() {
   else
     
     if [[ "$RETVAL" == 0 ]]; then
-      RETSYMBOL+='+'
+      RETSYMBOL='+'
     else
-      RETSYMBOL+="-"
+      RETSYMBOL='-'
     fi
     
   fi
