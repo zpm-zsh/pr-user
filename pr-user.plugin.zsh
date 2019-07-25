@@ -13,7 +13,7 @@ _pr_user() {
   
   if [[ "$EUID" == 0 ]]; then
     if [[ "$CLICOLOR" = 1 ]]; then
-      ISROOT="%{$c[red]$c_bold$c_dim%}root%{$c_reset%} "
+      ISROOT="%{$c[red]${c_bold}${c_dim}%}root%{$c_reset%} "
     else
       ISROOT="root "
     fi
