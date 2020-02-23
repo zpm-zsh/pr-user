@@ -1,7 +1,12 @@
 #!/usr/bin/env zsh
-: ${PR_PROMPT_PREFIX:=' '}
-: ${PR_PROMPT_SUFIX:=''}
 
+typeset -g PR_PROMPT_PREFIX
+PR_PROMPT_PREFIX=${PR_PROMPT_PREFIX:-' '}
+typeset -g PR_PROMPT_SUFIX
+PR_PROMPT_SUFIX=${PR_PROMPT_SUFIX:-''}
+
+typeset -g USERSYMBOL
+typeset -g pr_user
 if [[ "$EUID" == 0 ]]; then
   USERSYMBOL="%{$c[red]$c_bold%}#%{$c_reset%}"
 else
